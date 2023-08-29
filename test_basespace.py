@@ -6,4 +6,11 @@ def test_create_project():
     
     
 def test_get_datasets():
-    get_datasets()
+    import os
+    project_id = os.environ.get( "PROJECT_ID" )
+    topic_name = os.environ.get( "TOPIC_NAME" )
+    datasets = get_datasets( project_id, topic_name )
+    print(datasets)
+
+
+

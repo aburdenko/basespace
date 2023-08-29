@@ -1,11 +1,11 @@
 import json
 import requests
+import os
 from google.cloud import pubsub
 
-basespace_url = "https://api.basespace.illumina.com/v2"
-
+BASESPACE_BEARER_TOKEN=os.environ.get("BASESPACE_BEARER_TOKEN")
 headers = {
-    "Authorization": "Bearer $BASESPACE_BEARER_TOKEN",
+    "Authorization": f"Bearer {BASESPACE_BEARER_TOKEN}",
 }
 
 params = {
@@ -14,6 +14,7 @@ params = {
 
 
 def create_project(name: str):
+    basespace_url = "https://api.basespace.illumina.com/v2"
     params["name"] = name
 
     basespace_url += "/projects"
