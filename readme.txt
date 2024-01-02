@@ -24,7 +24,7 @@ curl -H "Authorization: Bearer $BASESPACE_BEARER_TOKEN" \
   }' \
 https://api.basespace.illumina.com/v2/projects
 
-curl -H "Authorization: Bearer 9824fd6870fc422b9696b98bbfedb346" -v -d "response_type=device_code" -d "scope=browse global" https://api.basespace.illumina.com/v2/applications
+curl -H "Authorization: Bearer $BASESPACE_BEARER_TOKEN" -v -d "response_type=device_code" -d "scope=browse global" https://api.basespace.illumina.com/v2/applications
 
 curl -H "Authorization: Bearer $BASESPACE_BEARER_TOKEN" \
 -v \
